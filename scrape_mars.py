@@ -57,7 +57,7 @@ def featured_image(browser):
     except AttributeError:
         return None
     #use the base url to creat an absolute url
-    img_url =f'https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html/{imag_url_rel}'
+    img_url =f'https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/{imag_url_rel}'
     return img_url
 
 def mars_facts():
@@ -93,7 +93,7 @@ def hemispheres(browser):
         hemisphere['image_url'] =sample_elem['href']
         #get hemisphere title 
         hemisphere['title'] =browser.find_by_css('h2.title').text
-        #Append hemisphere object to list 
+        #Append hemisphere object to list
         hemisphere_image_urls.append(hemisphere)
         #finally backwards
         browser.back()
